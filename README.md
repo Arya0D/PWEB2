@@ -182,4 +182,8 @@ $arya->tampilData();
 
 ## HASIL:
 
-<img src=''>
+<img src='img/instrusi kerja.png'>
+
+# TUGAS
+
+## 1.
