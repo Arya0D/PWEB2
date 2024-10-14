@@ -54,3 +54,132 @@ echo $mobil1->deskripsi();
 ?>
 
 ```
+
+# JOBSHEET 1
+
+## Instruksi Kerja
+
+### 1.Membuat Class dan Object
+
+```php
+//membuat class Mahasiswa
+class Mahasiswa
+{
+    //atribut dari class mahasiswa
+    public $nama;
+    public $nim;
+    public $jurusan;
+}
+//instansiasi objek
+$arya = new Mahasiswa("Arya", 230202154, "Mesin");
+```
+
+### 2. Implementasi Constructor
+
+```php
+//membuat class Mahasiswa
+class Mahasiswa
+{
+    //atribut dari class mahasiswa
+    public $nama;
+    public $nim;
+    public $jurusan;
+
+    //constructor untuk menginisialisasi atribut nama, nim, dan jurusan.
+    public function __construct($nama, $nim, $jurusan)
+    {
+        $this->nama = $nama;
+        $this->nim = $nim;
+        $this->jurusan = $jurusan;
+    }
+
+}
+//instansiasi objek
+$arya = new Mahasiswa("Arya", 230202154, "Mesin");
+```
+
+### 3. Membuat Metode Tambahan
+
+```php
+//membuat class Mahasiswa
+class Mahasiswa
+{
+    //atribut dari class mahasiswa
+    public $nama;
+    public $nim;
+    public $jurusan;
+
+    //constructor untuk menginisialisasi atribut nama, nim, dan jurusan.
+    public function __construct($nama, $nim, $jurusan)
+    {
+        $this->nama = $nama;
+        $this->nim = $nim;
+        $this->jurusan = $jurusan;
+    }
+
+    // method tambahan untuk merubah jurusan
+    public function updateJurusan($newJurusan)
+    {
+        $this->jurusan = $newJurusan;
+    }
+}
+//instansiasi objek
+$arya = new Mahasiswa("Arya", 230202154, "Mesin");
+```
+
+### 4. Penggunaan Atribut dan Metode
+
+```php
+//membuat class Mahasiswa
+class Mahasiswa
+{
+    //atribut dari class mahasiswa
+    public $nama;
+    public $nim;
+    public $jurusan;
+
+    //constructor untuk menginisialisasi atribut nama, nim, dan jurusan.
+    public function __construct($nama, $nim, $jurusan)
+    {
+        $this->nama = $nama;
+        $this->nim = $nim;
+        $this->jurusan = $jurusan;
+    }
+
+    // method tambahan untuk merubah jurusan
+    public function updateJurusan($newJurusan)
+    {
+        $this->jurusan = $newJurusan;
+    }
+
+    //method setter untuk merubah nim
+    public function setNim($nim)
+    {
+        $this->nim = $nim;
+    }
+
+    //method untuk menampilkan data mahasiswa
+    public function tampilData()
+    {
+        echo "Nama: $this->nama<br>";
+        echo "Nim: $this->nim<br>";
+        echo "Jurusan: $this->jurusan<br>";
+    }
+
+}
+//instansiasi objek
+$arya = new Mahasiswa("Arya", 230202154, "Mesin");
+echo "sebelum data dirubah<br>";
+$arya->tampilData();
+
+echo "<br>";
+
+echo "seteleah data dirubah<br>";
+$arya->updateJurusan("komputer dan Bisinis");
+$arya->setNim(230202054);
+$arya->tampilData();
+```
+
+## HASIL:
+
+<img src=''>
