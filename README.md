@@ -186,4 +186,84 @@ $arya->tampilData();
 
 # TUGAS
 
-## 1.
+## 1. Implememtsi kelas Dosen dengan atribut nama, nip, mataKuliah
+
+```php
+<?php
+//Pembuatan class Dosen
+class Dosen
+{
+    //atribut dari kelas dosen
+    public $nama;
+    public $nip;
+    public $mataKuliah;
+}
+```
+
+## 2. Membuat method tampilkanDosen
+
+```php
+<?php
+//Pembuatan class Dosen
+class Dosen
+{
+    //atribut dari kelas dosen
+    public $nama;
+    public $nip;
+    public $mataKuliah;
+
+    //construct function
+    public function __construct($nama, $nip, $mataKuliah)
+    {
+        $this->nama = $nama;
+        $this->nip = $nip;
+        $this->mataKuliah = $mataKuliah;
+    }
+
+    //method tampilkanDosen untuk menampilkan informasi dosen
+    public function tampilkanDosen()
+    {
+        echo "Nama: $this->nama <br>";
+        echo "NIP: $this->nip <br>";
+        echo "Mata Kuliah: $this->mataKuliah<br>";
+    }
+}
+```
+
+## 5. Mengintansiasi objek
+
+```php
+<?php
+//Pembuatan class Dosen
+class Dosen
+{
+    //atribut dari kelas dosen
+    public $nama;
+    public $nip;
+    public $mataKuliah;
+
+    //construct function
+    public function __construct($nama, $nip, $mataKuliah)
+    {
+        $this->nama = $nama;
+        $this->nip = $nip;
+        $this->mataKuliah = $mataKuliah;
+    }
+
+    //method tampilkanDosen untuk menampilkan informasi dosen
+    public function tampilkanDosen()
+    {
+        echo "Nama: $this->nama <br>";
+        echo "NIP: $this->nip <br>";
+        echo "Mata Kuliah: $this->mataKuliah<br>";
+    }
+
+    //instansiasi objek
+$budi = new Dosen("Budi", 111111, "Komputer");
+$budi->tampilkanDosen();
+}
+```
+
+## HASIL:
+
+<img src='img/Tugas1.png'>
