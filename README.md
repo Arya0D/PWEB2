@@ -7,3 +7,5 @@ fdsfs
 ```
 Look! You can see my backticks.
 ```
+
+<img src='img/image.png'>
