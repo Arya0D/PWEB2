@@ -882,4 +882,96 @@ $jurnalD->pengajuanJurnal();
 
 ```
 
+## Penjelasan Konsep OOP yang digunakan
+
+### 1. Inheritance
+
+Kelas Mahasiswa dan Dosen mewarisi kelas abstrak Person. Mereka menggunakan konstruktor dari kelas induk untuk menginisialisasi properti umum seperti nama, dan juga menambahkan properti spesifik seperti nim untuk Mahasiswa dan nidn untuk Dosen.
+
+```php
+abstract class mahasis
+class Mahasiswa extends Person
+{
+    // Kelas ini mewarisi properti dan metode dari Person
+}
+class Dosen extends Person
+{
+    // Kelas ini mewarisi properti dan metode dari Person
+}
+```
+
+### 2. Polymorphism
+
+Polimorfisme dicontohkan dengan adanya implementasi metode abstrak getRole() pada kelas Mahasiswa dan Dosen, yang mengembalikan nilai peran masing-masing objek ("Mahasiswa" atau "Dosen"). Setiap kelas turunan memberikan implementasi spesifik dari metode yang sama.
+
+```php
+class Mahasiswa extends Person
+{
+    // Implementasi dari metode abstrak getRole
+    public function getRole()
+    {
+        return "Mahasiswa"; // Mengembalikan peran sebagai Mahasiswa
+    }
+}
+
+class Dosen extends Person
+{
+    // Implementasi dari metode abstrak getRole
+    public function getRole()
+    {
+        return "Dosen"; // Mengembalikan peran sebagai Dosen
+    }
+}
+
+```
+
+### 3.Abstraksi
+
+Abstraksi diterapkan melalui kelas abstrak Person dan Jurnal. Kelas Person mendefinisikan kerangka untuk objek yang memiliki nama dan peran, sementara kelas Jurnal mendefinisikan kerangka untuk pengajuan jurnal. Metode abstrak getRole() pada Person dan pengajuanJurnal() pada Jurnal harus diimplementasikan oleh kelas turunan.
+
+```php
+abstract class Jurnal
+{
+    // Metode abstrak pengajuanJurnal yang harus diimplementasikan oleh kelas turunan
+    abstract function pengajuanJurnal();
+}
+
+class JurnalMahasiswa extends Jurnal
+{
+    public function pengajuanJurnal()
+    {
+        echo "Pengajuan Jurnal Mahasiswa <br>";
+    }
+}
+
+class JurnalDosen extends Jurnal
+{
+    public function pengajuanJurnal()
+    {
+        echo "Pengajuan Jurnal Dosen <br>";
+    }
+}
+
+```
+
+### Enkapsulasi
+
+enkapsulasi diterapkan dengan menggunakan getter dan setter method
+
+```php
+//getter method
+public function getNim(){
+return $this->nim;
+}
+
+//setter method
+public function setNim($nim){
+$this->nim=$nim;
+}
+
+
+```
+
+### Hasil:
+
 <img src='img/ik5-2.png'>
