@@ -32,6 +32,7 @@ class Mahasiswa
 
 
 }
+
 $arya = new Mahasiswa("Arya", 230202154, "Mesin");
 echo "sebelum data dirubah<br>";
 $arya->tampilData();
