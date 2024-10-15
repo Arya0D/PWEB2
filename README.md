@@ -44,7 +44,7 @@ Proses menyederhanakan kompleksitas dengan hanya menampilkan fitur penting dari 
 
 ### Polimorfisme (Polymorphism)
 
-emampuan objek untuk merespons metode yang sama dengan cara yang berbeda, tergantung pada kelas yang diinstansiasi. Ini sering diterapkan dengan metode yang memiliki nama yang sama tetapi berperilaku berbeda di kelas turunan.
+Kemampuan objek untuk merespons metode yang sama dengan cara yang berbeda, tergantung pada kelas yang diinstansiasi. Ini sering diterapkan dengan metode yang memiliki nama yang sama tetapi berperilaku berbeda di kelas turunan.
 
 contoh program dengan OOP:
 
