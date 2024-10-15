@@ -33,4 +33,4 @@ class Student extends Person
 
 //instansiasi objek Student
 $arya = new Student("Arya", 22);
-echo $arya->getNama(); //menampilkan nama student
+echo $arya->getName(); //menampilkan nama student

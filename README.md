@@ -562,4 +562,306 @@ $arya = new Student("Arya", 22);
 echo $arya->getNama(); //menampilkan nama student
 ```
 
-### hasil
+### hasil:
+
+<img src="img/ik1-2.png">
+
+### 2. Polymorphism
+
+```php
+<?php
+
+// Kelas Person yang mendefinisikan atribut dan metode dasar untuk sebuah orang
+class Person
+{
+    private $name; // Atribut privat untuk menyimpan nama
+
+    // Konstruktor untuk menginisialisasi objek Person dengan nama
+    public function __construct($name)
+    {
+        $this->name = $name; // Mengatur nama objek menggunakan parameter konstruktor
+    }
+
+    // Metode untuk mendapatkan nama dari objek Person
+    public function getName()
+    {
+        return $this->name; // Mengembalikan nilai nama
+    }
+}
+
+// Kelas Teacher yang merupakan turunan dari kelas Person
+class Teacher extends Person
+{
+    private $teacherId; // Atribut privat untuk menyimpan ID guru
+
+    // Konstruktor untuk menginisialisasi objek Teacher dengan nama dan ID guru
+    public function __construct($name, $teacherId)
+    {
+        parent::__construct($name); // Memanggil konstruktor kelas induk (Person) untuk mengatur nama
+        $this->teacherId = $teacherId; // Mengatur ID guru menggunakan parameter konstruktor
+    }
+
+    // Mengoverride metode getName() untuk menambahkan prefiks "Nama:"
+    public function getName()
+    {
+        return "Nama: " . parent::getName(); // Mengembalikan nama dengan prefiks "Nama:"
+    }
+}
+
+// Instansiasi objek Teacher
+$budi = new Teacher("Budi", 123);
+
+// Memanggil metode getName() untuk mendapatkan nama guru
+echo $budi->getName(); // Menampilkan "Nama: Budi"
+
+```
+
+### Hasil:
+
+<img src="img/ik2-2.png">
+
+### 3. Encapsulation
+
+```php
+<?php
+// Kelas Student yang mendefinisikan atribut studentId dan name
+class Student
+{
+    private $studentId; // Atribut privat untuk menyimpan ID mahasiswa
+    private $name; // Atribut privat untuk menyimpan nama mahasiswa
+
+    // Konstruktor untuk menginisialisasi objek Student dengan nama dan ID mahasiswa
+    public function __construct($name, $studentId)
+    {
+        $this->name = $name; // Mengatur nama mahasiswa
+        $this->studentId = $studentId; // Mengatur ID mahasiswa
+    }
+
+    // Metode untuk mendapatkan nilai dari atribut tertentu secara dinamis
+    public function get($atribut)
+    {
+        return $this->$atribut; // Mengembalikan nilai atribut yang diberikan sebagai parameter
+    }
+
+    // Metode untuk mengatur nilai atribut tertentu secara dinamis
+    public function set($atribut, $setAtribut)
+    {
+        $this->$atribut = $setAtribut; // Mengubah nilai atribut dengan nilai baru
+    }
+}
+
+// Instansiasi objek Student dengan nama "arya" dan ID mahasiswa 2222222
+$arya = new Student("arya", 2222222);
+
+// Menampilkan nama dan ID mahasiswa
+echo "Nama: " . $arya->get("name") . "<br>"; // Mengambil dan menampilkan atribut "name"
+echo "nim: " . $arya->get("studentId") . "<br>"; // Mengambil dan menampilkan atribut "studentId"
+
+// Mengubah nama mahasiswa menjadi "nale"
+$arya->set("name", "nale");
+
+// Setelah nama diubah
+echo "Setelah nama dirubah:<br>";
+echo "Nama: " . $arya->get("name"); // Menampilkan nama setelah perubahan
+
+```
+
+### Hasil:
+
+<img src="img/ik3-2.png">
+
+### 4. Abstraction
+
+```php
+<?php
+// Kelas abstrak course yang mendefinisikan metode abstrak getCourseDetails
+abstract class course
+{
+    // Metode abstrak yang harus diimplementasikan oleh kelas turunan
+    abstract function getCourseDetails();
+}
+
+// Kelas onlineCourse yang merupakan turunan dari kelas course
+class onlineCourse extends course
+{
+    // Mengimplementasikan metode getCourseDetails untuk memberikan detail kursus online
+    public function getCourseDetails()
+    {
+        echo "pembelajaran dengan metode online<br>"; // Menampilkan pesan untuk pembelajaran online
+    }
+}
+
+// Kelas offlineCourse yang merupakan turunan dari kelas course
+class offlineCourse extends course
+{
+    // Mengimplementasikan metode getCourseDetails untuk memberikan detail kursus offline
+    public function getCourseDetails()
+    {
+        echo "pembelajaran dengan metode offline<br>"; // Menampilkan pesan untuk pembelajaran offline
+    }
+}
+
+// Instansiasi objek dari kelas onlineCourse
+$belajarPhp = new onlineCourse();
+$belajarPhp->getCourseDetails(); // Memanggil metode getCourseDetails() dari onlineCourse
+echo "<br>";
+
+// Instansiasi objek dari kelas offlineCourse
+$belajarCss = new offlineCourse();
+$belajarCss->getCourseDetails(); // Memanggil metode getCourseDetails() dari offlineCourse
+
+```
+
+### Hasil:
+
+<img src='img/ik4-2.png'>
+
+## Tugas
+
+```php
+<?php
+// Kelas abstrak Person s
+abstract class Person
+{
+    private $nama; // Properti privat untuk menyimpan nama orang
+
+    // Konstruktor untuk menginisialisasi nama saat objek dibuat
+    public function __construct($nama)
+    {
+        $this->nama = $nama;
+    }
+
+    // Metode publik untuk mendapatkan nama orang
+    public function getNama()
+    {
+        return $this->nama;
+    }
+
+    // Metode abstrak getRole harus diimplementasikan oleh kelas turunan
+    abstract function getRole();
+}
+
+// Kelas Mahasiswa extends Person dan mewakili seorang mahasiswa
+class Mahasiswa extends Person
+{
+    private $nim;  // Properti privat untuk menyimpan nim
+    private $role; // Properti privat untuk menyimpan role
+
+    // Konstruktor menginisialisasi nama dan NIM, serta mengatur role menjadi 'Mahasiswa'
+    public function __construct($nama, $nim)
+    {
+        parent::__construct($nama); // Memanggil konstruktor dari kelas induk (Person)
+        $this->nim = $nim;
+        $this->role = "Mahasiswa"; // Mengatur role menjadi 'Mahasiswa'
+    }
+
+    // Metode publik untuk mendapatkan NIM mahasiswa
+    public function getNim()
+    {
+        return $this->nim;
+    }
+
+    // Metode publik untuk mengubah NIM mahasiswa
+    public function setNim($nim)
+    {
+        $this->nim = $nim;
+    }
+
+    // Implementasi dari metode abstrak getRole untuk mengembalikan role
+    public function getRole()
+    {
+        return $this->role;
+    }
+}
+
+// Kelas Dosen extends Person
+class Dosen extends Person
+{
+    //aribut dari kelas dosen
+    private $nidn;  // Properti privat untuk menyimpan nidn
+    private $role;  // Properti privat untuk menyimpan role
+
+    // Konstruktor menginisialisasi nama dan nidn, serta mengatur role menjadi 'Dosen'
+    public function __construct($nama, $nidn)
+    {
+        parent::__construct($nama); // Memanggil konstruktor dari kelas induk (Person)
+        $this->nidn = $nidn;
+        $this->role = "Dosen"; // Mengatur role menjadi 'Dosen'
+    }
+
+    // Metode publik untuk mendapatkan NIDN dosen
+    public function getNidn()
+    {
+        return $this->nidn;
+    }
+
+    // Metode publik untuk mengubah NIDN dosen
+    public function setNidn($nidn)
+    {
+        $this->nidn = $nidn;
+    }
+
+    // Implementasi dari metode abstrak getRole untuk mengembalikan role
+    public function getRole()
+    {
+        return $this->role;
+    }
+}
+
+// Kelas abstrak Jurnal mendefinisikan kerangka untuk jurnal
+abstract class Jurnal
+{
+    // Metode abstrak pengajuanJurnal yang harus diimplementasikan oleh kelas turunan
+    abstract function pengajuanJurnal();
+}
+
+// Kelas JurnalMahasiswa mengimplementasikan pengajuan jurnal untuk mahasiswa
+class JurnalMahasiswa extends Jurnal
+{
+    public function pengajuanJurnal()
+    {
+        echo "Pengajuan Jurnal Mahasiswa <br>";
+    }
+}
+
+// Kelas JurnalDosen mengimplementasikan pengajuan jurnal untuk dosen
+class JurnalDosen extends Jurnal
+{
+    public function pengajuanJurnal()
+    {
+        echo "Pengajuan Jurnal Dosen <br>";
+    }
+}
+
+
+// Membuat objek Mahasiswa
+echo "Mahasiswa <br>";
+$arya = new Mahasiswa("Arya", 230202054);
+echo "Nama:" . $arya->getNama() . "<br>";
+echo "Nim:" . $arya->getNim() . "<br>";
+echo "Role:" . $arya->getRole() . "<br>";
+
+
+echo "<br>";
+
+// Membuat objek Dosen
+echo "Dosen <br>";
+$budi = new Dosen("budi", 22222222);
+echo "Nama:" . $budi->getNama() . "<br>";
+echo "Nim:" . $budi->getNidn() . "<br>";
+echo "Role:" . $budi->getRole() . "<br>";
+
+
+echo "<br>";
+
+// Membuat dan menampilkan pengajuan jurnal mahasiswa
+$jurnalM = new JurnalMahasiswa();
+$jurnalM->pengajuanJurnal();
+
+// Membuat dan menampilkan pengajuan jurnal dosen
+$jurnalD = new JurnalDosen();
+$jurnalD->pengajuanJurnal();
+
+```
+
+<img src='img/ik5-2.png'>
