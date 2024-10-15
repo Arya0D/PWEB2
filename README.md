@@ -1,16 +1,12 @@
 # PWEB2
 
-## Pertemuan 1-2
-
 ### OOP
 
-Penggunaan kelas dan objek adalah inti dari pemrograman berorientasi objek
-(OOP). Dalam PHP, kelas digunakan untuk mendefinisikan struktur dan perilaku objek,
-sedangkan objek adalah instansiasi dari kelas tersebut. Dengan memanfaatkan kelas
-dan objek, kode dapat diorganisir dengan lebih baik, lebih mudah dipelihara, dan dapat
-digunakan kembali.
+OOP (Object-Oriented Programming) adalah paradigma pemrograman yang berfokus pada konsep objek, yang dapat menyimpan data (dalam bentuk atribut atau properti) dan fungsi (dalam bentuk metode). Tujuan OOP adalah untuk memodelkan dunia nyata dalam kode dengan cara yang lebih intuitif dan terstruktur.
 
 ### kelas(Class)
+
+Template atau blueprint untuk membuat objek. Kelas mendefinisikan atribut dan metode yang dimiliki oleh objek.
 
 - Struktur atau blueprint yang mendefinisikan atribut dan metode yang dimiliki
   oleh objek.
@@ -20,13 +16,35 @@ digunakan kembali.
 
 ### Objek (Object)
 
-- Instansiasi dari kelas.
-- Memiliki akses ke atribut dan metode yang didefinisikan dalam kelas.
+Instansi dari kelas. Objek adalah representasi nyata dari sebuah kelas, yang berisi data dan bisa melakukan tindakan melalui metode yang didefinisikan dalam kelas.
 
-### Atribut dan Metode
+### Atribut
 
-- Atribut: Menyimpan data atau keadaan dari objek.
-- Metode: Operasi atau fungsi yang dilakukan oleh objek.
+atribut adalah variabel atau data yang dimiliki oleh sebuah objek. Atribut menyimpan informasi atau keadaan (state) dari objek tersebut. Atribut biasanya didefinisikan di dalam kelas dan diakses melalui objek yang merupakan instansi dari kelas tersebut.
+
+### Metode (Method)
+
+method adalah fungsi yang didefinisikan di dalam sebuah kelas dan bisa dijalankan oleh objek dari kelas tersebut. Method digunakan untuk mendefinisikan perilaku atau tindakan yang dapat dilakukan oleh objek. Sebagai bagian dari objek, method dapat mengakses dan memanipulasi atribut yang ada dalam kelas.
+
+### Enkapsulasi (Encapsulation)
+
+Konsep yang menyembunyikan detail internal dari suatu objek dan hanya menyediakan antarmuka untuk berinteraksi dengannya. Hal ini dilakukan untuk menjaga keamanan data dan menghindari perubahan langsung dari luar.
+
+### Pewarisan (Inheritance)
+
+Mekanisme di mana suatu kelas dapat mewarisi atribut dan metode dari kelas lain. Hal ini memungkinkan penggunaan kembali kode dan memperluas fungsionalitas kelas.
+
+### Enkapsulasi (Encapsulation)
+
+Konsep yang menyembunyikan detail internal dari suatu objek dan hanya menyediakan antarmuka untuk berinteraksi dengannya. Hal ini dilakukan untuk menjaga keamanan data dan menghindari perubahan langsung dari luar.
+
+### Abstraksi (Abstraction)
+
+Proses menyederhanakan kompleksitas dengan hanya menampilkan fitur penting dari suatu objek, sembari menyembunyikan detail yang tidak relevan.
+
+### Polimorfisme (Polymorphism)
+
+emampuan objek untuk merespons metode yang sama dengan cara yang berbeda, tergantung pada kelas yang diinstansiasi. Ini sering diterapkan dengan metode yang memiliki nama yang sama tetapi berperilaku berbeda di kelas turunan.
 
 contoh program dengan OOP:
 
@@ -517,7 +535,7 @@ $arya->aksesFitur();
 
 <img src='img/ik4.png'>
 
-# JOBSHEET
+# JOBSHEET 3
 
 ## Instruksi Kerja
 
